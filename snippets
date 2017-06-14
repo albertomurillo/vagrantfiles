@@ -1,0 +1,8 @@
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    config.proxy.http     = "http://proxy.example.com"
+    config.proxy.https    = "http://proxy.example.com"
+    config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
+  end
+
+  config.vm.network "private_network", ip: "192.168.50.4"
+  config.vm.synced_folder "~/github", "/vagrant_data"
